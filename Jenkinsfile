@@ -46,7 +46,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        sh '/opt/sas/spre/home/SASFoundation/sas -autoexec "/opt/sas/viya/config/etc/workspaceserver/default/autoexec_deployment.sas" /opt/sas/devops/workspace/SASTable/DataPreparation.sas -log /tmp/CAS.log'
+        sh '/opt/sas/spre/home/SASFoundation/sas -autoexec "/opt/sas/viya/config/etc/workspaceserver/default/autoexec_deployment.sas" /opt/sas/devops/workspace/SASTable/DataPreparation.sas'
         echo 'Preparated Data'
         echo 'Deployment Successful'
       }
@@ -54,7 +54,7 @@ pipeline {
 
     stage('Artifact Saved') {
       steps {
-        sh '/opt/sas/spre/home/SASFoundation/sas -autoexec "/opt/sas/viya/config/etc/workspaceserver/default/autoexec_deployment.sas" /opt/sas/devops/workspace/SASTable/Scoring.sas -log /tmp/CAS.log'
+        sh '/opt/sas/spre/home/SASFoundation/sas -autoexec "/opt/sas/viya/config/etc/workspaceserver/default/autoexec_deployment.sas" /opt/sas/devops/workspace/SASTable/Scoring.sas'
         echo 'Scored Successful'
       }
     }
